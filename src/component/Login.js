@@ -1,46 +1,66 @@
-import React, { Component } from 'react'
-
+import React, { Component } from "react";
+import {BrowserRouter as Router,Link,Route} from 'react-router-dom';
+import WorldClock from './WorldClock';
 
 class Login extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             email:'',
-             password:'',
-        }
-    }
+  constructor(props) {
+    super(props);
 
-   handleEmailChange=(event)=>{
-      this.setState({
-          email:event.target.value,
-      });
-   }
+    this.state = {
+      email: "",
+      password: "",
+    };
+  }
 
-   handlePasswordChange=(event)=>{
-      this.setState({
-          password:event.target.value,
-      })
-   }
-    
-    render() {
-        return (
-            <form className="login-form">
-                 <span className="login-signup-header">Log In</span>
-                 <div className="field">
-                    <input type="email" placeholder="Email" required  onChange={this.handleEmailChange}/>
-                 </div>
-                 <div className="field">
-                  <input type="password" placeholder="Password" required onChange={this.handlePasswordChange}/>
-                 </div>
-                <div className="field">
-                    <button onClick={this.handleFormSubmit}>LogIn</button>
-                </div>                 
-            </form>
-                
-            
-        )
-    }
+  handleEmailChange = (event) => {
+    this.setState({
+      email: event.target.value,
+    });
+  };
+
+  handlePasswordChange = (event) => {
+    this.setState({
+      password: event.target.value,
+    });
+  };
+
+  handleFormSubmit=(e)=>{
+      e.preventDefault();
+      const {email , password}=this.state;
+      if(email==='rahuljha12527@gmail.com'  && password==='1234'){
+         <Router>
+             
+             <Route path="/login" component={WorldClock} />
+         </Router>   
+      }
+  }
+
+  render() {
+    return (
+      <form className="login-form">
+        <span className="login-signup-header">Log In</span>
+        <div className="field">
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            onChange={this.handleEmailChange}
+          />
+        </div>
+        <div className="field">
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            onChange={this.handlePasswordChange}
+          />
+        </div>
+        <div className="field">
+          <button onClick={this.handleFormSubmit}>LogIn</button>
+        </div>
+      </form>
+    );
+  }
 }
 
-export default Login
+export default Login;
