@@ -45,7 +45,7 @@ class WorldClock extends Component {
           <div className="Us">
             <label>London:</label>
 
-            <strong>{this.state.date.toLocaleTimeString('en-GB',{timeZon:'Europe/London'})}</strong>
+            <strong>{this.state.date.toLocaleTimeString('en-GB',{timeZone:'Europe/London'})}</strong>
           </div>
           <div className="India">
             <label>India:</label>
