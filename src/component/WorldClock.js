@@ -29,28 +29,30 @@ class WorldClock extends Component {
     return (
       <div className="container">
         <div className="US-Time">
-          <label>Set United State time:</label>
-          <input type="text" />
+          <strong>Set United State time:</strong>
+          <input type="text"  placeholder="20:16:12"/>
 
-          <button onClick={this.clickHandler}>Submit</button>
+          <button className="space" onClick={this.clickHandler}>Submit</button>
         </div>
 
         <div className="time">
           <div className="Us">
             <label>United State:</label>
-            <label>{this.state.USTime}</label>
+            <strong>{this.state.USTime}</strong>
           </div>
           <div className="Us">
             <label>London:</label>
 
-            <label>{this.state.londonTime}</label>
+            <strong>{this.state.londonTime}</strong>
           </div>
           <div className="India">
             <label>India:</label>
-            <label>{this.state.date.toLocaleTimeString([], { hour12: false })}</label>
+            <strong>{this.state.date.toLocaleTimeString([], { hour12: false })}</strong>
             {this.callMe()}
           </div>
         </div>
+
+        <div className="horizontal-bar"></div>
       </div>
     );
   }
