@@ -30,9 +30,11 @@ class WorldClock extends Component {
       <div className="container">
         <div className="US-Time">
           <strong>Set United State time:</strong>
-          <input type="text"  placeholder="20:16:12"/>
+          <input type="text" placeholder="20:16:12" />
 
-          <button className="space" onClick={this.clickHandler}>Submit</button>
+          <button className="space" onClick={this.clickHandler}>
+            Submit
+          </button>
         </div>
 
         <div className="time">
@@ -47,12 +49,28 @@ class WorldClock extends Component {
           </div>
           <div className="India">
             <label>India:</label>
-            <strong>{this.state.date.toLocaleTimeString([], { hour12: false })}</strong>
+            <strong>
+              {this.state.date.toLocaleTimeString([], { hour12: false })}
+            </strong>
             {this.callMe()}
           </div>
         </div>
 
         <div className="horizontal-bar"></div>
+
+        <div className="Settings">
+        
+          <div>
+            Time differnce for <strong>London:</strong>
+            <input type="text" placeholder="5"  className="but"/>
+            <button className="but">Submit</button>
+          </div>
+          <div className="India">
+            Time differnce for <strong>India:</strong>
+            <input type="text" placeholder="13" className="but" />
+            <button className="but">Submit</button>
+          </div>
+        </div>
       </div>
     );
   }

@@ -85,3 +85,15 @@
 .space{
   margin-left: 15px;
 }
+
+.Settings{
+  margin-top: 10%;
+  display: flex;
+}
+
+.India{
+  margin-left: 3em;
+}
+.but{
+  margin-left: 1em;
+}
