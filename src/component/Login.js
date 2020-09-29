@@ -45,13 +45,14 @@ class Login extends Component {
           <form className="login-form">
             <span className="login-signup-header">Log In</span>
             <div className="field">
+              
               <input
                 type="email"
                 placeholder="Email"
                 required
                 onChange={this.handleEmailChange}
               />
-            </div>
+            </div>  
             <div className="field">
               <input
                 type="password"
